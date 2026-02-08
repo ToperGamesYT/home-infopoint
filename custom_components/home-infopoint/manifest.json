@@ -1,0 +1,15 @@
+{
+  "domain": "home_infopoint",
+  "name": "Home.InfoPoint",
+  "codeowners": [
+    "ToperGamesYT"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/ToperGamesYT/home-infopoint",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/ToperGamesYT/home-infopoint/issues",
+  "requirements": [
+    "beautifulsoup4>=4.12.2"
+  ],
+  "version": "1.0.0"
+}
