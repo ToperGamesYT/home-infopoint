@@ -143,10 +143,11 @@ class HomeInfoPointSubjectSensor(CoordinatorEntity, SensorEntity):
         if not grades:
             return {}
             
-        latest = grades[0]
+        latest = grades[-1]
         return {
             "latest_grade_date": latest["date"],
             "latest_grade_comment": latest["comment"],
             "latest_grade_value": latest["grade"],
-            "history": grades 
+            # Return reversed history so newest is first in the list attribute
+            "history": grades[::-1] 
         }

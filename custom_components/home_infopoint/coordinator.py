@@ -35,8 +35,26 @@ class HomeInfoPointDataUpdateCoordinator(DataUpdateCoordinator):
             hass,
             _LOGGER,
             name=DOMAIN,
-            update_interval=timedelta(minutes=30),
+            # Disable automatic polling
+            update_interval=None,
         )
+        
+        # Schedule daily update at 17:50
+        # Assuming HA is configured with the correct timezone (Berlin)
+        from homeassistant.helpers.event import async_track_time_change
+        
+        self.unsub_schedule = async_track_time_change(
+            hass, 
+            self._async_scheduled_update, 
+            hour=17, 
+            minute=50, 
+            second=0
+        )
+
+    async def _async_scheduled_update(self, now):
+        """Trigger update from schedule."""
+        _LOGGER.debug(f"Triggering scheduled update at {now}")
+        await self.async_request_refresh()
 
     async def _async_update_data(self):
         """Fetch data from API endpoint."""
