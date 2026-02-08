@@ -19,9 +19,8 @@ This is a custom component for Home Assistant to integrate with the **Home.InfoP
 
 ## Installation
 
-1.  Copy the `home_infopoint` folder into your Home Assistant's `custom_components` directory.
-    - Path: `/config/custom_components/home_infopoint`
-2.  Restart Home Assistant.
+1. Add this repository to HACS
+2. Install
 
 ## Configuration
 
