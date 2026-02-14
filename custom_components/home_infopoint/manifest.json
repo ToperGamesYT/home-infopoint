@@ -2,7 +2,7 @@
   "domain": "home_infopoint",
   "name": "Home.InfoPoint",
   "codeowners": [
-    "ToperGamesYT"
+    "@ToperGamesYT"
   ],
   "config_flow": true,
   "documentation": "https://github.com/ToperGamesYT/home-infopoint",
